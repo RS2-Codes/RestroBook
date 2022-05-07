@@ -14,7 +14,7 @@
 class dbConnect {
     private $host = 'localhost';
     private $user = 'root';
-    private $dbname = 'resto';
+    private $dbname = 'restro';
     private $password = '';
 
     function connect() {

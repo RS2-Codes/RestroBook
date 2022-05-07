@@ -18,7 +18,7 @@ if (isset($_SESSION['user_location'])) {
 }
 
 if (isset($_GET['restro_id'])) {
-    $restro_id = $_GET['restro_id'];
+    $restro_id = filter_var($_GET['restro_id'], FILTER_SANITIZE_NUMBER_INT);
     //echo $userLocation;
 } else {
     if (isset($_SERVER['HTTP_REFERER'])) {
@@ -98,15 +98,15 @@ include_once('backend/assets/check.php');
 
     ?>
 
-    <div class="d-flex flex-column justify-content-center mx-md-n5">
-        <h2 class="text-center px-md-5"><?php echo $dataShow['restro_name']; ?></h2>
-        <h2 class="text-center px-md-5"><?php echo $dataShow['restro_tab_avl']; ?> Tables</h2>
+    <div class="d-flex flex-column justify-content-center mt-5 mx-md-n5">
+        <h2 class="text-center px-md-5 text-uppercase"><?php echo $dataShow['restro_name']; ?></h2>
+        <h2 class="text-center px-md-5"><?php echo $dataShow['restro_tab_avl']; ?> Tables Available</h2>
 
     </div>
 
     <div class="booking main">
         <div class="image-sec">
-            <img src="images/mahakaal.jpg">
+            <img src="images/<?php echo $data['restro_image']; ?>">
         </div>
         <div class="form-sec">
             <form action="backend/assets/check.php" method="post">
@@ -114,13 +114,27 @@ include_once('backend/assets/check.php');
                     <div class="col-md-6">
                         <div class="form-group">
                             <span class="form-label">Date</span>
-                            <input class="form-control" name="book_date" type="date" required>
+                            <input class="form-control" id="booking_date" name="book_date" type="date" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <span class="form-label">Time</span>
-                            <input class="form-control" name="book_time" type="text" required>
+                            <select class="form-control selectt" id="booking_time" name="book_time">
+                                <option disabled selected hidden>Select your time</option>
+                                <option value="1">10AM-11AM</option>
+                                <option value="2">11AM-12PM</option>
+                                <option value="3">12PM-1PM</option>
+                                <option value="4">1PM-2PM</option>
+                                <option value="5">2PM-3PM</option>
+                                <option value="6">3PM-4PM</option>
+                                <option value="7">4PM-5PM</option>
+                                <option value="8">5PM-6PM</option>
+                                <option value="9">6PM-7PM</option>
+                                <option value="10">7PM-8PM</option>
+                                <option value="11">8PM-9PM</option>
+                                <option value="12">9PM-10PM</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -133,12 +147,13 @@ include_once('backend/assets/check.php');
                         <div class="form-group">
                             <span class="form-label">Guests</span>
                             <select class="form-control selectt" name="book_guest">
-                                <option>1-2</option>
-                                <option>2-4</option>
-                                <option>5-6</option>
-                                <option>6-8</option>
-                                <option>8-10</option>
-                                <option>10-15</option>
+
+                                <option value="2">1-2</option>
+                                <option value="4">2-4</option>
+                                <option value="6">5-6</option>
+                                <option value="8">6-8</option>
+                                <option value="10">8-10</option>
+                                <option value="15">10-15</option>
                             </select>
                             <span class="select-arrow"></span>
                         </div>
@@ -172,6 +187,17 @@ include_once('backend/assets/check.php');
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        let bookingDate = document.getElementById("booking_date");
+        let bookingTime = document.getElementById("booking_time");
+        
+        bookingTime.addEventListener("click",function(){
+            if(bookingDate.value == '') {
+                alert('book');
+            }
+        });
+        
+    </script>
 </body>
 
 </html>
