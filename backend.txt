@@ -1,0 +1,12 @@
+1) home page - location register (lena hoga, database mein changes honge, aas paas ke restaurants dikhane hai, cards will change)
+2) when restaurant is selected through book now button, form khulega booking.html and uspar le jaana hai inko
+3) jab booking ho rahi hogi toh dynamic data jaayega, kabse kab tak open hai aur kitna seats available hai 
+4) when user clicks on book on, check if they are signed in
+5) now when booking is confirmed, dusre page par redirect hoga booked.html. booking details hogi. data aayega database ke through. cancel button will also be there.
+6) sign up ke baad uski my profile dikhni chahiye through profile button with logout button 
+7) set to default address
+8) admin aur user ka rehne do - create an account wala
+9) Rhv ko kehna ki jab book pe click kere to form ka data ho restaurant ka data bhi le le
+10) To sahi se pata chale ki rest ka name konsa wala hai or
+Baki kuch details
+Jo chaiye ho gi
