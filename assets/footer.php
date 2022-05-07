@@ -1,6 +1,6 @@
-<footer class="fixed-bottom">
-    <div class="row justify-content-center">
-        <div class="col-md text-center custom-foot-css">
+<footer class="fixed-bottom custom-footer-css" style="background-color: rgba(0, 0, 0, 0.2)">
+    <div class="row justify-content-center custom-footer-inner">
+        <div class="col-md text-center custom-foot-css align-items">
             <div class="footer-site-logo mb-4">
                 <a href="#">RestroBook</a>
             </div>

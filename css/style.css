@@ -34,6 +34,9 @@ body {
     align-content: center;
 }
 
+.align-items{
+    align-items: center;
+}
 
 .nav-link {
     color: var(--main-text-color);
@@ -565,3 +568,4 @@ a {
     width: 100%;
     justify-content: space-around;
 }
+

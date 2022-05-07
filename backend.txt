@@ -10,3 +10,21 @@
 10) To sahi se pata chale ki rest ka name konsa wala hai or
 Baki kuch details
 Jo chaiye ho gi
+
+
+new work
+
+booking page set kerna hai    >> booking.php
+after booking     >> booked.php
+	create table here which will display booked tables
+
+
+login/reg set kerna hai  >> footer.php
+means ki names and colors    >> footer.php
+
+
+rhv >> 
+	after booking table should be reduce 
+	if she/he cancle booking then table data should be re added/increase	
+
+
