@@ -106,7 +106,7 @@ include_once('backend/assets/check.php');
 
     <div class="booking main">
         <div class="image-sec">
-            <img src="images/<?php echo $data['restro_image']; ?>">
+            <img src="images/<?php echo $dataShow['restro_image']; ?>">
         </div>
         <div class="form-sec">
             <form action="backend/assets/check.php" method="post">
@@ -114,26 +114,13 @@ include_once('backend/assets/check.php');
                     <div class="col-md-6">
                         <div class="form-group">
                             <span class="form-label">Date</span>
-                            <input class="form-control" id="booking_date" name="book_date" type="date" required>
+                            <input class="form-control" id="booking_date" name="book_date" type="date" min=<?php echo date("Y-m-d") ?> required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <span class="form-label">Time</span>
-                            <select class="form-control selectt" id="booking_time" name="book_time">
-                                <option disabled selected hidden>Select your time</option>
-                                <option value="1">10AM-11AM</option>
-                                <option value="2">11AM-12PM</option>
-                                <option value="3">12PM-1PM</option>
-                                <option value="4">1PM-2PM</option>
-                                <option value="5">2PM-3PM</option>
-                                <option value="6">3PM-4PM</option>
-                                <option value="7">4PM-5PM</option>
-                                <option value="8">5PM-6PM</option>
-                                <option value="9">6PM-7PM</option>
-                                <option value="10">7PM-8PM</option>
-                                <option value="11">8PM-9PM</option>
-                                <option value="12">9PM-10PM</option>
+                            <select class="form-control selectt" id="booking_time" name="book_time" required>
                             </select>
                         </div>
                     </div>
@@ -146,7 +133,7 @@ include_once('backend/assets/check.php');
                     <div class="col-md-6">
                         <div class="form-group">
                             <span class="form-label">Guests</span>
-                            <select class="form-control selectt" name="book_guest">
+                            <select class="form-control selectt" name="book_guest" required>
 
                                 <option value="2">1-2</option>
                                 <option value="4">2-4</option>
@@ -160,7 +147,7 @@ include_once('backend/assets/check.php');
                     </div>
                 </div>
                 <div class="form-btn">
-                    <button class="submit-btn" name="book_submit">Book Now</button>
+                    <button class="submit-btn" id="submit-btn" name="book_submit">Book Now</button>
                 </div>
             </form>
         </div>
@@ -187,17 +174,7 @@ include_once('backend/assets/check.php');
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
-    <script>
-        let bookingDate = document.getElementById("booking_date");
-        let bookingTime = document.getElementById("booking_time");
-        
-        bookingTime.addEventListener("click",function(){
-            if(bookingDate.value == '') {
-                alert('book');
-            }
-        });
-        
-    </script>
+    <script src="js/booking.js"></script>
 </body>
 
 </html>

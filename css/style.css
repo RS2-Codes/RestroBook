@@ -179,8 +179,9 @@ a {
     flex-direction: row;
     align-items: center;
     justify-content: space-between !important;
-    width: 1200px;
+    max-width: 1200px;
     height: 353px;
+    gap: 1rem;
 }
 
 .image-sec {
@@ -204,6 +205,10 @@ a {
     margin-bottom: 5px;
 }
 
+.selectt:disabled {
+    background-color: #777;
+}
+
 .select-arrow {
     color: #000;
 }
@@ -217,6 +222,10 @@ a {
     border: none;
     border-radius: 5px;
     width: 150px;
+}
+
+#submit-btn:disabled {
+    color: #aaa;
 }
 
 
