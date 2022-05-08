@@ -1,10 +1,13 @@
 <?php
 
 session_start();
-if (isset($_SESSION['user_login'])) {
-    if ($_SESSION['user_login'] === 1) {
-        $userlogin = 1;
-    }
+ob_start();
+if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
+    $userID = $_SESSION['user_id'];
+    $userEmail = $_SESSION['user_email'];
+    $login = 1;
+} else {
+    $login = 0;
 }
 
 if (isset($_SESSION['user_location'])) {
@@ -121,10 +124,6 @@ echo '</pre>';
     <!-- FOOTER -->
 
     <?php include_once("assets/footer.php"); ?>
-
-    <div>
-        <div></div>
-    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

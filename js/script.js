@@ -12,7 +12,8 @@ for (let i = 0; i < locChanger.length; i++) {
             },
             success: function(data) {
                 if (parseInt(data) == 1) {
-                    window.location.reload();
+                    /* window.location.reload(); */
+                    location.replace('index.php');
                 } else {
                     alert('Something went wrong');
                 }
@@ -37,7 +38,7 @@ loginSignupClose.onclick = () => {
 };
 
 const signupTrigger = document.querySelectorAll(".signup__trigger");
-const signupElement = document.querySelector("#signup");
+const signupElement = document.querySelector("#signupForm");
 const signupWrapperElement = document.querySelector("#signup-wrapper");
 const forms = document.querySelectorAll(".form");
 
@@ -49,3 +50,44 @@ const openFormFunc = () => {
 
 signupTrigger.forEach((s) => s.addEventListener("click", openFormFunc));
 forms.forEach((f) => f.addEventListener("submit", (e) => e.preventDefault()));
+
+
+
+/* Signup Form */
+
+let signupForm = $('#signupForm')
+let loginForm = $('#loginForm')
+
+function signupSubmit(e) {
+    e.preventDefault()
+    $.ajax({
+        type: 'POST',
+        url: 'backend/assets/check.php',
+        data: signupForm.serialize(),
+        success: function(data) {
+            if (data == 1) {
+                alert("Failed to register");
+            } else if (data == 2) {
+                window.location.reload();
+            } else {
+                alert("Account created but failed to login");
+            }
+        }
+    });
+}
+
+function loginSubmit(e) {
+    e.preventDefault()
+    $.ajax({
+        type: 'POST',
+        url: 'backend/assets/check.php',
+        data: loginForm.serialize(),
+        success: function(data) {
+            if (data == 1) {
+                window.location.reload();
+            } else {
+                alert('Failed to login')
+            }
+        }
+    });
+}

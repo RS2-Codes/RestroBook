@@ -572,3 +572,18 @@ a {
     width: 100%;
     justify-content: space-around;
 }
+
+table {
+    margin-inline: auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+table>* {
+    border: 1px solid #ccc;
+}
+
+table thead th,
+table tbody td {
+    padding: 1rem 2rem;
+}

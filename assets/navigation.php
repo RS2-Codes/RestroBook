@@ -48,7 +48,12 @@
 
                 </style>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a class="login-trigger" id="login-trigger" href="#" data-target="#login" data-toggle="modal">Login/Register</a>
+                    <?php if($login == 0){ ?>
+                        <a class="login-trigger" id="login-trigger" href="#" data-target="#login" data-toggle="modal">Login/Register</a>
+                    <?php } else { ?>
+                        <?php echo $userEmail; ?>
+                        <a class="login-trigger" id="login-trigger" href="#" data-target="#login" data-toggle="modal" style="display: none;">Login/Register</a>
+                    <?php } ?>
                 </div>
             </div>
         </div>

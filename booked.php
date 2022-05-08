@@ -1,10 +1,13 @@
 <?php
 
 session_start();
-if (isset($_SESSION['user_login'])) {
-  if ($_SESSION['user_login'] === 1) {
-    $userlogin = 1;
-  }
+ob_start();
+if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
+    $userID = $_SESSION['user_id'];
+    $userEmail = $_SESSION['user_email'];
+    $login = 1;
+} else {
+    $login = 0;
 }
 
 if (isset($_SESSION['user_location'])) {
@@ -88,11 +91,40 @@ include_once('backend/assets/check.php');
 
     <!-- code here -->
 
-    <h2 class="text-center">Booked</h2>
-    <h2 class="text-center"><?php echo $_SESSION['book_date'] ?></h2>
-    <h2 class="text-center"><?php echo $_SESSION['book_time'] ?></h2>
-    <h2 class="text-center"><?php echo $_SESSION['book_phone'] ?></h2>
-    <h2 class="text-center"><?php echo $_SESSION['book_guest'] ?></h2>
+
+
+    <h2 class="text-center mt-5 mb-3">Your Bookings</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Booking ID</th>
+                <th>Restaurant Name</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>No. of Guest</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <?php
+                $userBook = new UserBook;
+                $userBook->setUser_id($userID);
+                $bookedData = $userBook->bookedRestroFullData();
+                foreach ($bookedData as $key) {
+            ?>
+            <tr>
+                <td><?php echo $key['user_book_id']; ?></td>
+                <td><?php echo $key['restro_name']; ?></td>
+                <td><?php echo $key['user_date']; ?></td>
+                <td><?php echo $key['user_time']; ?></td>
+                <td><?php echo $key['user_guest']; ?></td>
+                <td> <a onClick="javascript: return confirm('Please confirm deletion');" href="backend/assets/check.php?delete_booked_id=<?php echo $key['user_book_id']; ?>">Cancel Booking</a></td>
+            </tr>
+            <?php } ?>
+            
+        </tbody>
+    </table>
 
     <?php include_once("assets/footer.php"); ?>
 

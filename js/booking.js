@@ -1,4 +1,4 @@
-const timeSlots = ['<option disabled selected hidden>Select your time</option>', '<option value="1">10AM-11AM</option>', '<option value="2">11AM-12PM</option>', '<option value="3">12PM-1PM</option>', '<option value="4">1PM-2PM</option>', '<option value="5">2PM-3PM</option>', '<option value="6">3PM-4PM</option>', '<option value="7">4PM-5PM</option>', '<option value="8">5PM-6PM</option>', '<option value="9">6PM-7PM</option>', '<option value="10">7PM-8PM</option>', '<option value="11">8PM-9PM</option>', '<option value="12">9PM-10PM</option>'];
+const timeSlots = ['<option value="0" disabled selected hidden>Select your time</option>', '<option value="1">10AM-11AM</option>', '<option value="2">11AM-12PM</option>', '<option value="3">12PM-1PM</option>', '<option value="4">1PM-2PM</option>', '<option value="5">2PM-3PM</option>', '<option value="6">3PM-4PM</option>', '<option value="7">4PM-5PM</option>', '<option value="8">5PM-6PM</option>', '<option value="9">6PM-7PM</option>', '<option value="10">7PM-8PM</option>', '<option value="11">8PM-9PM</option>', '<option value="12">9PM-10PM</option>'];
 let bookingDate = document.getElementById("booking_date")
 let bookingTime = document.getElementById("booking_time")
 let submitBtn = document.getElementById("submit-btn")
@@ -122,4 +122,26 @@ bookingDate.onchange = function() {
             submitBtn.disabled = false
         }
     }
+}
+
+let bookingForm = $('#booking_form')
+
+function bookingSubmit(e) {
+    e.preventDefault()
+    $.ajax({
+        type: 'POST',
+        url: 'backend/assets/check.php',
+        data: bookingForm.serialize(),
+        success: function(data) {
+            if (data == 1) {
+                loginTrigger.click();
+            } else if (data == 2) {
+                window.location.replace('booked.php');
+            } else {
+                alert(data)
+                alert('Unable to book');
+            }
+            /* console.log(data) */
+        }
+    });
 }

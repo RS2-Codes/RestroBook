@@ -2,10 +2,14 @@
 
 session_start();
 ob_start();
-if (isset($_SESSION['user_login'])) {
-    if ($_SESSION['user_login'] === 1) {
-        $userlogin = 1;
-    }
+if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
+    $userID = $_SESSION['user_id'];
+    $userEmail = $_SESSION['user_email'];
+    $login = 1;
+    echo 'Login';
+} else {
+    echo 'Out';
+    $login = 0;
 }
 
 if (isset($_SESSION['user_location'])) {
@@ -109,7 +113,9 @@ include_once('backend/assets/check.php');
             <img src="images/<?php echo $dataShow['restro_image']; ?>">
         </div>
         <div class="form-sec">
-            <form action="backend/assets/check.php" method="post">
+            <form action="backend/assets/check.php" id="booking_form" onsubmit="bookingSubmit(event);" method="post">
+                <input type="hidden" name="restro_id" value="<?php echo $restro_id ?>">
+                <input type="hidden" name="user_id" value="<?php echo $userID ?>">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -155,21 +161,6 @@ include_once('backend/assets/check.php');
     <!-- Booking Page End -->
 
     <?php include_once("assets/footer.php"); ?>
-
-
-
-    <?php
-
-    if (isset($_SESSION['submit_check'])) {
-        unset($_SESSION['submit_check']);
-    ?>
-        <script>
-            window.location.replace("booked.php");
-        </script>
-
-    <?php }
-
-    ?>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
