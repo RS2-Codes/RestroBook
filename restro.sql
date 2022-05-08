@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2021 at 11:57 PM
+-- Generation Time: May 08, 2022 at 10:58 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `resto`
+-- Database: `restro`
 --
 
 -- --------------------------------------------------------
@@ -73,14 +73,14 @@ CREATE TABLE `restaurant` (
 -- Dumping data for table `restaurant`
 --
 
-INSERT INTO `restaurant` (`restro_id`, `restro_category_id`, `restro_name`, `restro_desc`, `restro_image`, `restro_image_alt`,`restro_tab_avl`, `restro_email`, `restro_address`, `restro_city_id`, `restro_pincode`, `restro_phone_no`, `restro_contact_no`, `restro_other_details`, `restro_table`) VALUES
-(8, 1, 'Product a', 'we are the best', 'chotku.jpg', 'chotku.jpg','2', '', '', 1, 0, '0', '0', '', ''),
-(9, 1, 'Chotki as as ad', 'a ds ', 'chotku2.jpg', 'chotku2.jpg','3', '', '', 2, 0, '0', '0', '', ''),
-(10, 4, 'Chotki as as ad', 'Batman ki photo hai ye', 'chotku3.jpg', 'chotku3.jpg','7', '', '', 3, 0, '0', '0', '', ''),
-(11, 0, 'Siddhi Ka Adda', 'Aao khao pio mauj kerro', 'chotku2.jpg', 'chotku2.jpg','4', 'siddhi@gmail.com', 'Delhi Ki Hai Ye Bandi', 1, 202021, '10', '10', '', ''),
-(13, 0, 'Chotku Ka Kamal', 'Tum toh bhad m hi jao', 'chotku.jpg', 'chotku.jpg','2', 'chotku@gmail.com', 'Allahabad Ki Hai Ye Bandi', 2, 202022, '10 number ka ', '10 number ka ', '', ''),
-(14, 0, 'Chotku Ka Kamal 2', 'Tum toh bhad m hi jao 2', 'chotku2.jpg', 'chotku2.jpg','6', 'chotku2@gmail.com', 'Allahabad 2', 3, 202021, '10 number ka ', '10 number ka ', '', ''),
-(15, 0, 'Chotku Ka Kamal 3', 'Tum toh bhad m hi jao 3', 'chotku3.jpg', 'chotku3.jpg','5', 'chotku3@gmail.com', 'Allahabad 3', 3, 202023, '10 number ka ', '10 number ka ', '', '');
+INSERT INTO `restaurant` (`restro_id`, `restro_category_id`, `restro_name`, `restro_desc`, `restro_image`, `restro_image_alt`, `restro_tab_avl`, `restro_email`, `restro_address`, `restro_city_id`, `restro_pincode`, `restro_phone_no`, `restro_contact_no`, `restro_other_details`, `restro_table`) VALUES
+(8, 1, 'Product a', 'we are the best', 'chotku.jpg', 'chotku.jpg', 2, '', '', 1, 0, '0', '0', '', ''),
+(9, 1, 'Chotki as as ad', 'a ds ', 'chotku2.jpg', 'chotku2.jpg', 3, '', '', 2, 0, '0', '0', '', ''),
+(10, 4, 'Chotki as as ad', 'Batman ki photo hai ye', 'chotku3.jpg', 'chotku3.jpg', 7, '', '', 3, 0, '0', '0', '', ''),
+(11, 0, 'Siddhi Ka Adda', 'Aao khao pio mauj kerro', 'chotku2.jpg', 'chotku2.jpg', 4, 'siddhi@gmail.com', 'Delhi Ki Hai Ye Bandi', 1, 202021, '10', '10', '', ''),
+(13, 0, 'Chotku Ka Kamal', 'Tum toh bhad m hi jao', 'chotku.jpg', 'chotku.jpg', 2, 'chotku@gmail.com', 'Allahabad Ki Hai Ye Bandi', 2, 202022, '10 number ka ', '10 number ka ', '', ''),
+(14, 0, 'Chotku Ka Kamal 2', 'Tum toh bhad m hi jao 2', 'chotku2.jpg', 'chotku2.jpg', 6, 'chotku2@gmail.com', 'Allahabad 2', 3, 202021, '10 number ka ', '10 number ka ', '', ''),
+(15, 0, 'Chotku Ka Kamal 3', 'Tum toh bhad m hi jao 3', 'chotku3.jpg', 'chotku3.jpg', 5, 'chotku3@gmail.com', 'Allahabad 3', 3, 202023, '10 number ka ', '10 number ka ', '', '');
 
 -- --------------------------------------------------------
 
@@ -124,7 +124,38 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `email`, `username`, `password`, `role`, `phone_no`, `address`, `pincode`) VALUES
-(1, '', 'restro_user', '$2y$10$qiPFZppwLHjYQEf2CAsxjOZ4xrTXH5l8Av/f5eVUDIKMGAmXgIg2G', 'user', 0, '', 0);
+(1, '', 'restro_user', '$2y$10$qiPFZppwLHjYQEf2CAsxjOZ4xrTXH5l8Av/f5eVUDIKMGAmXgIg2G', 'user', 0, '', 0),
+(2, 'rhvsingh004@gmail.com', 'rhvsingh', '$2y$10$6L/y9HGMh6G5HQy4d4aQJ.jJWKkO1Qln6gOmEv8wJ1gUiMA1vf/1C', 'user', 0, '', 0),
+(3, 'singhrajaharshvardhan004@gmail.com', 'asd', '$2y$10$UUZ74n6EphZgfquqUW6LQOTeq1T76Aiti0s2jcKZiJWU4Lt3gjYtC', 'user', 0, '', 0),
+(4, 'as@gmail.com', 'san', '$2y$10$bX.ZoC2B2nXIJ08JtJX7AOpbzeFgLLAkuNa3fEipJ4pk3F.UUSr3u', 'user', 0, '', 0),
+(5, 'raj@gmail.com', 'raj', '$2y$10$vuNaeFkpdeFzMRG1aDUydup2CKZjVHpXkIQkhOv8j0H2eGRrk1euC', 'user', 0, '', 0),
+(6, 'siddhi@gmail.com', 'siddhi', '$2y$10$pdzBUBZtwgPvmgN8LQXHf.Ol2PHxh7OV5JsJjvIG42WTxXsqxHhu6', 'user', 0, '', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_book`
+--
+
+CREATE TABLE `user_book` (
+  `user_book_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `user_restaurant_id` int(11) NOT NULL,
+  `user_time` varchar(256) NOT NULL,
+  `user_date` date NOT NULL,
+  `user_phone` varchar(256) NOT NULL,
+  `user_guest` int(11) NOT NULL,
+  `soft_delete` varchar(10) NOT NULL DEFAULT 'no'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user_book`
+--
+
+INSERT INTO `user_book` (`user_book_id`, `user_id`, `user_restaurant_id`, `user_time`, `user_date`, `user_phone`, `user_guest`, `soft_delete`) VALUES
+(1, 2, 11, '5', '2022-05-24', '7777777777', 10, 'yes'),
+(2, 2, 13, '5', '2022-05-12', '7777777777', 6, 'no'),
+(3, 2, 8, '6', '2022-05-18', '7777777777', 6, 'yes');
 
 --
 -- Indexes for dumped tables
@@ -155,6 +186,12 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`);
 
 --
+-- Indexes for table `user_book`
+--
+ALTER TABLE `user_book`
+  ADD PRIMARY KEY (`user_book_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -180,7 +217,13 @@ ALTER TABLE `restro_locations`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `user_book`
+--
+ALTER TABLE `user_book`
+  MODIFY `user_book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
