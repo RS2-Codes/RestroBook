@@ -7,7 +7,7 @@ bookingTime.disabled = true
 submitBtn.disabled = true
 bookingDate.style.border = '2px solid red'
 
-bookingDate.onchange = function() {
+bookingDate.onchange = () => {
     if (!bookingDate.value == '') {
         bookingTime.disabled = false
         bookingDate.style.border = '0'
@@ -124,6 +124,12 @@ bookingDate.onchange = function() {
     }
 }
 
+bookingTime.onchange = () => {
+    if (bookingTime.style.borderWidth == '2px') {
+        bookingTime.style.borderWidth = '0px'
+    }
+}
+
 let bookingForm = $('#booking_form')
 
 function bookingSubmit(e) {
@@ -137,6 +143,8 @@ function bookingSubmit(e) {
                 loginTrigger.click();
             } else if (data == 2) {
                 window.location.replace('booked.php');
+            } else if (data == 3) {
+                bookingTime.style.border = '2px solid red'
             } else {
                 alert(data)
                 alert('Unable to book');

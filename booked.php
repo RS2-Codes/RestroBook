@@ -8,6 +8,16 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
     $login = 1;
 } else {
     $login = 0;
+    include_once('backend/assets/error_403.php');
+    if(isset($_SERVER['HTTP_REFERER'])) {
+       header('Refresh:3,url='.$_SERVER['HTTP_REFERER']); 
+    } else {
+        header('Refresh:3,url=index.php');
+    }
+    exit;
+    /* header('location:'.$_SERVER['HTTP_REFERER']); */
+    //header("Refresh:5; url=index.php");
+    //die('You are not logged in. Page is going to refresh in 5 seconds.');
 }
 
 if (isset($_SESSION['user_location'])) {
@@ -119,7 +129,13 @@ include_once('backend/assets/check.php');
                 <td><?php echo $key['user_date']; ?></td>
                 <td><?php echo $key['user_time']; ?></td>
                 <td><?php echo $key['user_guest']; ?></td>
-                <td> <a onClick="javascript: return confirm('Please confirm deletion');" href="backend/assets/check.php?delete_booked_id=<?php echo $key['user_book_id']; ?>">Cancel Booking</a></td>
+                <td>
+                    <form action="backend/assets/check.php" method="post">
+                        <input type="hidden" name="delete_restro_id" value="<?php echo $key['restro_id']; ?>" />
+                        <input type="hidden" name="delete_booked_id" value="<?php echo $key['user_book_id']; ?>" />
+                        <input type="submit" name="submit_delete" onClick="javascript: return confirm('Please confirm deletion');" value="Cancel Booking" />
+                    </form> 
+                </td>
             </tr>
             <?php } ?>
             

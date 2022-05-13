@@ -14,46 +14,64 @@
     --color1: #548CA8;
     --color2: #476072;
     --color3: #334257;
-    --font-famaly1: 'Montserrat', sans-serif;
+    --hover-color-1: #0a58ca;
+    --font-famaly1: 'Montserrat', sans-serif
 }
 
 * {
     margin: 0;
-    box-sizing: border-box;
+    box-sizing: border-box
 }
 
 body {
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
-    font-family: var(--font-famaly1);
+    font-family: var(--font-famaly1)
 }
 
 .flex-box {
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-content: center
 }
 
 .align-items {
-    align-items: center;
-}
-
-.nav-link {
-    color: var(--main-text-color);
+    align-items: center
 }
 
 a {
     color: var(--main-text-color);
-    text-decoration: none;
+    text-decoration: none
 }
 
 .card>img {
     max-width: 350px;
-    width: 100%;
+    width: 100%
 }
 
 .cpadding {
-    padding-right: 8px;
+    padding-right: 8px
+}
+
+
+/* Navigation */
+
+.nav-link {
+    color: var(--main-text-color)
+}
+
+.navbar-brand img {
+    width: 70px;
+    height: auto
+}
+
+.logged-user.dropdown>a:focus-within {
+    color: var(--hover-color-1)
+}
+
+nav .dropdown-menu {
+    padding-block: 0;
+    overflow: hidden
 }
 
 
@@ -101,7 +119,7 @@ a {
     margin: 0;
     padding: 0;
     justify-content: center;
-    padding-top: 4rem;
+    padding-top: 4rem
 }
 
 .cards_item {
@@ -127,7 +145,7 @@ a {
     box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: hidden
 }
 
 .card_content {
@@ -181,32 +199,32 @@ a {
     justify-content: space-between !important;
     max-width: 1200px;
     height: 353px;
-    gap: 1rem;
+    gap: 1rem
 }
 
 .image-sec {
     width: 750px;
-    margin-left: 25px;
+    margin-left: 25px
 }
 
 .col-md-6 {
-    margin-top: 5px;
+    margin-top: 5px
 }
 
 .form-group input {
     width: 300px;
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 5px
 }
 
 .selectt {
     width: 300px;
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 5px
 }
 
 .selectt:disabled {
-    background-color: #777;
+    background-color: #777
 }
 
 .select-arrow {
@@ -214,18 +232,18 @@ a {
 }
 
 .form-btn {
-    margin-top: 20px;
+    margin-top: 20px
 }
 
 .form-btn button {
     padding: 5px;
     border: none;
     border-radius: 5px;
-    width: 150px;
+    width: 150px
 }
 
 #submit-btn:disabled {
-    color: #aaa;
+    color: #aaa
 }
 
 
@@ -245,11 +263,11 @@ a {
     border-radius: 30px;
     position: relative;
     text-decoration: none;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out
 }
 
 .login-trigger:hover {
-    color: #333;
+    color: #333
 }
 
 #login-signup-form {
@@ -262,7 +280,7 @@ a {
     display: none;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.7)
 }
 
 #login-signup-close {
@@ -270,28 +288,28 @@ a {
     width: 100%;
     height: 100%;
     top: 0;
-    left: 0;
+    left: 0
 }
 
 .login-signup-form {
     position: relative;
-    width: 325px;
+    width: 325px
 }
 
 .svg-icon {
     width: 30px;
     height: 30px;
-    cursor: pointer;
+    cursor: pointer
 }
 
 .svg-icon:hover {
-    transform: scale(1.05);
+    transform: scale(1.05)
 }
 
 .svg-icon path,
 .svg-icon polygon,
 .svg-icon rect {
-    fill: #ffffff;
+    fill: #ffffff
 }
 
 .login,
@@ -301,7 +319,7 @@ a {
     grid-gap: 15px;
     padding: 35px;
     border-radius: 12px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.06)
 }
 
 .login__icon,
@@ -541,6 +559,11 @@ a {
     color: var(--card-link-hover);
 }
 
+.btn-outline-main:disabled {
+    padding: 0.8rem 1rem !important;
+    text-decoration: line-through;
+}
+
 .custom-css {
     border-radius: 10px;
     background-color: transparent;
@@ -586,4 +609,16 @@ table>* {
 table thead th,
 table tbody td {
     padding: 1rem 2rem;
+}
+
+table tbody td form input[type="submit"] {
+    outline: none;
+    border: 0;
+    background-color: transparent;
+    color: inherit;
+    transition: all 0.3s ease-in-out
+}
+
+table tbody td form input[type="submit"]:hover {
+    color: var(--hover-color-1)
 }

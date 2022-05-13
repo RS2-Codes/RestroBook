@@ -239,6 +239,24 @@ class restroData
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
     }
+
+    function updateRestroTable($stat)
+    {
+        if ($stat == 1) {
+            $query = "UPDATE restaurant SET restro_tab_avl = restro_tab_avl - 1 WHERE restro_id = :restro_id";
+        } else {
+            $query = "UPDATE restaurant SET restro_tab_avl = restro_tab_avl + 1 WHERE restro_id = :restro_id";
+        }
+        $stmt = $this->dbconn->prepare($query);
+        $stmt->bindParam(':restro_id', $this->restro_id);
+        $stmt->execute();
+        
+        if (!$stmt->errorCode()) {
+            die('Query Failed');
+        } else {
+            return 0;
+        }
+    }
 }
 
 class restroLocData
@@ -572,7 +590,8 @@ class userBook
         }
     }
 
-    function bookedRestro() {
+    function bookedRestro()
+    {
         $query = "SELECT * FROM user_book WHERE user_id = :user_id";
         $stmt = $this->dbconn->prepare($query);
         $stmt->bindParam(':user_id', $this->user_id);
@@ -584,7 +603,8 @@ class userBook
         }
     }
 
-    function bookedRestroFullData() {
+    function bookedRestroFullData()
+    {
         $query = "SELECT * FROM user_book INNER JOIN restaurant ON user_book.user_restaurant_id = restaurant.restro_id  WHERE user_id = :user_id AND soft_delete='no'";
         $stmt = $this->dbconn->prepare($query);
         $stmt->bindParam(':user_id', $this->user_id);
@@ -597,6 +617,7 @@ class userBook
     }
 }
 
+
 if (isset($_POST['book_submit'])) {
     print_r($_POST);
     session_start();
@@ -607,7 +628,17 @@ if (isset($_POST['book_submit'])) {
     $_SESSION['submit_check'] = 1;
 }
 
+/* Function for booking restaurant */
+
 if (isset($_POST['restro_id'])) {
+    if (!isset($_POST['user_id'])) {
+        echo 1;
+        exit;
+    }
+    if (!isset($_POST['book_time'])) {
+        echo 3;
+        exit;
+    }
     $user_id = filter_var($_POST['user_id'], FILTER_SANITIZE_NUMBER_INT);
     $restro_id = filter_var($_POST['restro_id'], FILTER_SANITIZE_NUMBER_INT);
     $book_date = $_POST['book_date'];
@@ -622,6 +653,9 @@ if (isset($_POST['restro_id'])) {
     $userBook->setUser_phone($book_phone);
     $userBook->setUser_guest($book_guest);
     if ($userBook->bookRestro() == 0) {
+        $restroData = new restroData;
+        $restroData->setrestroId($restro_id);
+        $restroData->updateRestroTable(1);
         echo 2;
     } else {
         echo 0;
@@ -666,13 +700,19 @@ if (isset($_POST['login_email']) && isset($_POST['login_password'])) {
     }
 }
 
-if(isset($_GET['delete_booked_id'])) {
+if (isset($_POST['submit_delete'])) {
+    $restro_id = filter_var($_POST['delete_restro_id'], FILTER_SANITIZE_NUMBER_INT);
+    $delete_booked_id = filter_var($_POST['delete_booked_id'], FILTER_SANITIZE_NUMBER_INT);
+
     $db = new dbConnect;
-    
-    $delete_id = filter_var($_GET['delete_booked_id'],FILTER_SANITIZE_NUMBER_INT);
     $query = "UPDATE user_book SET soft_delete = 'yes' WHERE user_book_id = :user_book_id";
     $stmt = $db->connect()->prepare($query);
-    $stmt->bindParam(':user_book_id',$delete_id);
+    $stmt->bindParam(':user_book_id', $delete_booked_id);
     $stmt->execute();
-    header('location:'.$_SERVER['HTTP_REFERER']);
+
+    $restroData = new restroData;
+    $restroData->setrestroId($restro_id);
+    $restroData->updateRestroTable(0);
+
+    header('location:' . $_SERVER['HTTP_REFERER']);
 }

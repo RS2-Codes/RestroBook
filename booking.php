@@ -6,9 +6,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
     $userID = $_SESSION['user_id'];
     $userEmail = $_SESSION['user_email'];
     $login = 1;
-    echo 'Login';
+    /* echo 'Login'; */
 } else {
-    echo 'Out';
+    /* echo 'Out'; */
     $login = 0;
 }
 
@@ -108,6 +108,8 @@ include_once('backend/assets/check.php');
 
     </div>
 
+    <?php if($dataShow['restro_tab_avl'] > 0) { ?>
+
     <div class="booking main">
         <div class="image-sec">
             <img src="images/<?php echo $dataShow['restro_image']; ?>">
@@ -115,7 +117,9 @@ include_once('backend/assets/check.php');
         <div class="form-sec">
             <form action="backend/assets/check.php" id="booking_form" onsubmit="bookingSubmit(event);" method="post">
                 <input type="hidden" name="restro_id" value="<?php echo $restro_id ?>">
-                <input type="hidden" name="user_id" value="<?php echo $userID ?>">
+                <?php if($login == 1) { ?>
+                    <input type="hidden" name="user_id" value="<?php echo $userID ?>">
+                <?php } ?>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -158,6 +162,8 @@ include_once('backend/assets/check.php');
             </form>
         </div>
     </div>
+
+    <?php }  ?>
     <!-- Booking Page End -->
 
     <?php include_once("assets/footer.php"); ?>

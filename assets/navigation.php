@@ -12,9 +12,11 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="booked.php">Booked</a>
-                    </li>
+                    <?php if ($login == 1) { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="booked.php">Booked</a>
+                        </li>
+                    <?php } ?>
                     <li class="nav-item dropdown">
                         <?php
                         $restro_locations = new restroLocData;
@@ -48,10 +50,16 @@
 
                 </style>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <?php if($login == 0){ ?>
+                    <?php if ($login == 0) { ?>
                         <a class="login-trigger" id="login-trigger" href="#" data-target="#login" data-toggle="modal">Login/Register</a>
                     <?php } else { ?>
-                        <?php echo $userEmail; ?>
+                        <div class="logged-user dropdown">
+                            <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><?php echo $userEmail; ?></a>
+                            <ul class="dropdown-menu custom-drop-color location-dropdown">
+                                <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+                            </ul>
+
+                        </div>
                         <a class="login-trigger" id="login-trigger" href="#" data-target="#login" data-toggle="modal" style="display: none;">Login/Register</a>
                     <?php } ?>
                 </div>
