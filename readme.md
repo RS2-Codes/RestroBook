@@ -1,8 +1,9 @@
 
 # Welcome to RestroBook - a table booking app
 
-![Logo](images\RB.png)
-
+<h1 align="center">
+<img src="images/RB.png" alt="RB - RestoBook" />
+</h1>
 When you want to go out, but don't want to wait in a long line for booking a table, restrobook helps you with this in a moment of click. Now book a table at the nearest restaurant and get free reservation for 5 or less people. Our site helps you save your time, efforts and energy. 
 Try it today. 
 
@@ -18,7 +19,6 @@ Try it today.
 [![made-with-CSS](https://img.shields.io/badge/Made%20with-CSS-1f425f.svg)](https://www.CSS.com)
 [![made-with-Bootstrap](https://img.shields.io/badge/Made%20with-Bootstrap-1f425f.svg)](https://www.Bootstrap.com)
 [![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg)](https://www.javascript.com)
-[![made-with-JQuery](https://img.shields.io/badge/Made%20with-JQuery-1f425f.svg)](https://www.JQuery.com)
 [![made-with-PHP](https://img.shields.io/badge/Made%20with-PHP-1f425f.svg)](https://www.PHP.com)
 
 
@@ -44,7 +44,7 @@ Try it today.
 ![import](images/import.png)
 ![import](images/import_file.png)
 
-- Open new tab and and type  `localhost/bluelearn`
+- Open new tab and and type  `localhost/RestroBook`
 - Select location.
 
 ## Screenshots
@@ -58,7 +58,7 @@ Try it today.
 [![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
 
 
-| <a href="https://github.com/RS2-Codes"><img src="https://media-exp1.licdn.com/dms/image/C4E03AQG5ha01Ib2uzg/profile-displayphoto-shrink_800_800/0/1590308724273?e=1657152000&v=beta&t=8p8JyXofnoK-grvFat-TLPyZ8ziUornijrZsGIjGa0Y" width=150px height=150px /></a>  |<a href="https://github.com/RS2-Codes"><img src="https://media-exp1.licdn.com/dms/image/C4E03AQG5ha01Ib2uzg/profile-displayphoto-shrink_800_800/0/1590308724273?e=1657152000&v=beta&t=8p8JyXofnoK-grvFat-TLPyZ8ziUornijrZsGIjGa0Y" width=150px height=150px /></a> | <a href="https://github.com/RS2-Codes"><img src="https://media-exp1.licdn.com/dms/image/C4E03AQG5ha01Ib2uzg/profile-displayphoto-shrink_800_800/0/1590308724273?e=1657152000&v=beta&t=8p8JyXofnoK-grvFat-TLPyZ8ziUornijrZsGIjGa0Y" width=150px height=150px /></a> |  <a href="https://github.com/RS2-Codes"><img src="https://media-exp1.licdn.com/dms/image/C4E03AQG5ha01Ib2uzg/profile-displayphoto-shrink_800_800/0/1590308724273?e=1657152000&v=beta&t=8p8JyXofnoK-grvFat-TLPyZ8ziUornijrZsGIjGa0Y" width=150px height=150px /></a> |
+| <a href="https://github.com/rhvsingh"><img src="https://github.com/rhvsingh.png" width=150px height=150px /></a>  |<a href="https://github.com/rajkumar-justcoder"><img src="https://github.com/rajkumar-justcoder.png" width=150px height=150px /></a> | <a href="https://github.com/Sandhya312"><img src="https://github.com/Sandhya312.png" width=150px height=150px /></a> |  <a href="https://github.com/stutimongia2024"><img src="https://github.com/stutimongia2024.png" width=150px height=150px /></a> |
 | :---: | :---: |:---:|:---:|
-| **[Raja Harsh Vardhan Singh](https://github.com/RS2-Codes)**  | **[Raja Harsh Vardhan Singh](https://github.com/RS2-Codes)**  | **[Raja Harsh Vardhan Singh](https://github.com/RS2-Codes)**  | **[Raja Harsh Vardhan Singh](https://github.com/RS2-Codes)** | **[Raja Harsh Vardhan Singh](https://github.com/RS2-Codes)**  | **[Raja Harsh Vardhan Singh](https://github.com/RS2-Codes)**| 
+| **[Raja Harsh Vardhan Singh](https://github.com/rhvsingh)**  | **[Rajkumar Khistariya](https://github.com/rajkumar-justcoder)** | **[Sandhya Kumarii](https://github.com/Sandhya312)**  | **[Stuti Mongia](https://github.com/stutimongia2024)**| 
 
