@@ -22,56 +22,36 @@
         }
 
         body {
-            background-color: #a74006;
-            font-family: sans-serif;
+            background-color: black;
+            color: white;
         }
 
-        .container {
-            z-index: 1;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            padding: 10px;
-            min-width: 300px;
+        h1 {
+            color: red;
         }
 
-        .container div {
-            display: inline-block;
+        h6 {
+            color: red;
+            text-decoration: underline;
         }
 
-        .container .lock {
-            opacity: 1;
-        }
-
-        .container h1 {
-            font-family: "Comfortaa", cursive;
-            font-size: 100px;
-            text-align: center;
-            color: #eee;
-            font-weight: 100;
-            margin: 0;
-        }
-
-        .container p {
-            color: #fff;
-        }
 
         .lock {
             transition: 0.5s ease;
             position: relative;
             overflow: hidden;
             opacity: 0;
+            z-index: -100;
         }
 
         .lock.generated {
             transform: scale(0.5);
             position: absolute;
             -webkit-animation: 2s move linear;
-            animation: 2s move linear;
+            animation: 9s move linear;
             -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
+            filter: blur(1.5px);
         }
 
         .lock ::after {
@@ -87,7 +67,7 @@
         }
 
         .lock .bottom {
-            background: #D68910;
+            background: #940023;
             height: 40px;
             width: 60px;
             display: block;
@@ -110,6 +90,97 @@
             padding: 10px;
             border-radius: 50%;
         }
+
+        .main {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .main-mid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .w-100 {
+            width: 100%;
+        }
+
+        .animate-top {
+            position: relative;
+            animation: animatetop 0.4s
+        }
+        .jumbo{
+            font-size:64px
+        }
+
+        @keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        .animate-left {
+            position: relative;
+            animation: animateleft 0.4s
+        }
+
+        @keyframes animateleft {
+            from {
+                left: -300px;
+                opacity: 0
+            }
+
+            to {
+                left: 0;
+                opacity: 1
+            }
+        }
+
+        .animate-right {
+            position: relative;
+            animation: animateright 0.4s
+        }
+
+        @keyframes animateright {
+            from {
+                right: -300px;
+                opacity: 0
+            }
+
+            to {
+                right: 0;
+                opacity: 1
+            }
+        }
+
+
+        .animate-zoom {
+            animation: animatezoom 0.6s
+        }
+
+        @keyframes animatezoom {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
 
         @-webkit-keyframes move {
             to {
@@ -136,12 +207,14 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>4<div class="lock">
-                <div class="top"></div>
-                <div class="bottom"></div>
-            </div>3</h1>
-        <p>Access denied</p>
+    <div class="main">
+        <div class="main-mid">
+            <h1 class="w-100 animate-top jumbo"><code>Access Denied</code></h1>
+            <hr class="w-100 animate-left" style="margin:auto;width:50%">
+            <h3 class="w-100 animate-right">You dont have permission to view this site.</h3>
+            <h3 class="w-100 animate-zoom">🚫🚫🚫🚫</h3>
+            <h6 class="w-100 animate-zoom">error code:403 forbidden</h6>
+        </div>
     </div>
     <script>
         const interval = 500;

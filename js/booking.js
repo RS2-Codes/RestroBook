@@ -138,7 +138,7 @@ function bookingSubmit(e) {
         type: 'POST',
         url: 'backend/assets/check.php',
         data: bookingForm.serialize(),
-        success: function(data) {
+        success: function (data) {
             if (data == 1) {
                 loginTrigger.click();
             } else if (data == 2) {
