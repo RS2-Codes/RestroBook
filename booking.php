@@ -108,60 +108,60 @@ include_once('backend/assets/check.php');
 
     </div>
 
-    <?php if($dataShow['restro_tab_avl'] > 0) { ?>
+    <?php if ($dataShow['restro_tab_avl'] > 0) { ?>
 
-    <div class="booking main">
-        <div class="image-sec">
-            <img src="images/<?php echo $dataShow['restro_image']; ?>">
-        </div>
-        <div class="form-sec">
-            <form action="backend/assets/check.php" id="booking_form" onsubmit="bookingSubmit(event);" method="post">
-                <input type="hidden" name="restro_id" value="<?php echo $restro_id ?>">
-                <?php if($login == 1) { ?>
-                    <input type="hidden" name="user_id" value="<?php echo $userID ?>">
-                <?php } ?>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <span class="form-label">Date</span>
-                            <input class="form-control" id="booking_date" name="book_date" type="date" min=<?php echo date("Y-m-d") ?> required>
+        <div class="booking main">
+            <div class="image-sec">
+                <img src="images/<?php echo $dataShow['restro_image']; ?>">
+            </div>
+            <div class="form-sec">
+                <form action="backend/assets/check.php" id="booking_form" onsubmit="bookingSubmit(event);" method="post">
+                    <input type="hidden" name="restro_id" value="<?php echo $restro_id ?>">
+                    <?php if ($login == 1) { ?>
+                        <input type="hidden" name="user_id" value="<?php echo $userID ?>">
+                    <?php } ?>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <span class="form-label">Date</span>
+                                <input class="form-control" id="booking_date" name="book_date" type="date" min=<?php echo date("Y-m-d") ?> required>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <span class="form-label">Time</span>
-                            <select class="form-control selectt" id="booking_time" name="book_time" required>
-                            </select>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <span class="form-label">Time</span>
+                                <select class="form-control selectt" id="booking_time" name="book_time" required>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <span class="form-label">Phone No.</span>
-                            <input class="form-control" name="book_phone" type="tel" maxlength="10" required>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <span class="form-label">Phone No.</span>
+                                <input class="form-control" name="book_phone" type="tel" maxlength="10" required>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <span class="form-label">Guests</span>
-                            <select class="form-control selectt" name="book_guest" required>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <span class="form-label">Guests</span>
+                                <select class="form-control selectt" name="book_guest" required>
 
-                                <option value="2">1-2</option>
-                                <option value="4">2-4</option>
-                                <option value="6">5-6</option>
-                                <option value="8">6-8</option>
-                                <option value="10">8-10</option>
-                                <option value="15">10-15</option>
-                            </select>
-                            <span class="select-arrow"></span>
+                                    <option value="2">1-2</option>
+                                    <option value="4">2-4</option>
+                                    <option value="6">5-6</option>
+                                    <option value="8">6-8</option>
+                                    <option value="10">8-10</option>
+                                    <option value="15">10-15</option>
+                                </select>
+                                <span class="select-arrow"></span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="form-btn">
-                    <button class="submit-btn" id="submit-btn" name="book_submit">Book Now</button>
-                </div>
-            </form>
+                    <div class="form-btn">
+                        <button class="submit-btn" id="submit-btn" name="book_submit">Book Now</button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
 
     <?php }  ?>
     <!-- Booking Page End -->
@@ -171,7 +171,7 @@ include_once('backend/assets/check.php');
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/booking.js"></script>
+    <script type="module" src="js/booking.js"></script>
 </body>
 
 </html>
