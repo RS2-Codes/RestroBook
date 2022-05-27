@@ -7,6 +7,22 @@ bookingTime.disabled = true
 submitBtn.disabled = true
 bookingDate.style.border = '2px solid red'
 
+async function quotescall() {
+    await fetch('src/quotes.json', {
+        method: "GET"
+    }).then(response => response.json())
+        .then(data => {
+            // data.map((item) => {
+            // console.log(data);
+                let quotes = document.getElementById('quotemain')
+
+                 quotes.innerHTML = `<div class="quote-text">${data[random].h}</div>`;
+                //  console.log(data[random].h)
+            });
+        // })
+}
+quotescall();
+
 bookingDate.onchange = () => {
     if (!bookingDate.value == '') {
         bookingTime.disabled = false

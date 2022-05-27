@@ -1,0 +1,41 @@
+[
+    {
+        "timeSlots": "<option value=\"0\" disabled selected hidden>Select your time</option>"
+    },
+    {
+        "timeSlots": "<option value=\"1\">10AM-11AM</option>"
+    },
+    {
+        "timeSlots": "<option value=\"2\">11AM-12PM</option>"
+    },
+    {
+        "timeSlots": "<option value=\"3\">12PM-1PM</option>"
+    },
+    {
+        "timeSlots": "<option value=\"4\">1PM-2PM</option>"
+    },
+    {
+        "timeSlots": "<option value=\"5\">2PM-3PM</option>"
+    },
+    {
+        "timeSlots": "<option value=\"6\">3PM-4PM</option>"
+    },
+    {
+        "timeSlots": "<option value=\"7\">4PM-5PM</option>"
+    },
+    {
+        "timeSlots": "<option value=\"8\">5PM-6PM</option>"
+    },
+    {
+        "timeSlots": "<option value=\"9\">6PM-7PM</option>"
+    },
+    {
+        "timeSlots": "<option value=\"10\">7PM-8PM</option>"
+    },
+    {
+        "timeSlots": "<option value=\"11\">8PM-9PM</option>"
+    },
+    {
+        "timeSlots": "<option value=\"12\">9PM-10PM</option>"
+    }
+]
