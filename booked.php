@@ -10,10 +10,10 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
     $login = 0;
     include_once('backend/assets/error_403.php');
     if(isset($_SERVER['HTTP_REFERER'])) {
-       header($_SERVER['HTTP_REFERER']); 
-    } else {
-        header('index.php');
-    }
+        header('Refresh:3,url='.$_SERVER['HTTP_REFERER']); 
+     } else {
+         header('Refresh:3,url=index.php');
+     }
     exit;
     /* header('location:'.$_SERVER['HTTP_REFERER']); */
     //header("Refresh:5; url=index.php");
