@@ -30,9 +30,9 @@ include_once('backend/assets/check.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+
+    <?php include_once "assets/header_links.php"; ?>
+
     <title>RestroBook</title>
 </head>
 
@@ -58,40 +58,28 @@ echo '</pre>';
                     <li class="cards_item">
                         <div class="col">
                             <div class="card border-0 custom-css">
-                                <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                                    <title>Placeholder</title>
-                                    <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-                                </svg> -->
                                 <div class="card_image">
                                     <img src="images/<?php echo $data['restro_image']; ?>" alt="<?php echo $data['restro_image_alt']; ?>">
                                 </div>
-
-
                                 <div class="card-body card_content">
                                     <h2 class="card_title"><?php echo $data['restro_name']; ?></h2>
                                     <p class="card-text"><?php echo $data['restro_desc']; ?></p>
+
+                                    <p class="card-text mt-2" style="font-size: 0.75rem;"><i class="fa-solid fa-location-dot me-1"></i><?php echo $data['restro_address']; ?></p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <?php if($data['restro_tab_avl'] > 0) { ?>
+                                            <?php if ($data['restro_tab_avl'] > 0) { ?>
                                                 <button type="button" class="btn btn-sm btn-outline-main"><a class="btn card_btn" href="booking.php?restro_id=<?php echo $data['restro_id']; ?>">Check Now</a></button>
                                             <?php } else { ?>
                                                 <button type="button" class="btn btn-sm btn-outline-main" disabled>No Availability</button>
                                             <?php } ?>
-                                            
+
                                         </div>
-                                        <small class="text-muted"><?php echo $data['restro_tab_avl']; ?> Tables</small>
+                                        <small class="<?php echo $data['restro_tab_avl'] > 0 ? '' : 'text-muted' ?>"><?php echo $data['restro_tab_avl']; ?> <?php echo $data['restro_tab_avl'] > 0 ? 'Tables' : 'Table' ?></small>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="card">
-                            <div class="card_image"><img src="images/<?php echo $data['restro_image']; ?>" alt="<?php echo $data['restro_image_alt']; ?>"></div>
-                            <div class="card_content">
-                                <h2 class="card_title"><?php echo $data['restro_name']; ?></h2>
-                                <p class="card_text"><?php echo $data['restro_desc']; ?></p>
-                                <a class="btn card_btn" href="booking.php?restro_id=<?php echo $data['restro_id']; ?>">Check Now</a>
-                            </div>
-                        </div> -->
                     </li>
                 <?php
                 }
@@ -130,8 +118,7 @@ echo '</pre>';
 
     <?php include_once("assets/footer.php"); ?>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <?php include_once "assets/footer_links.php"; ?>
     <script src="js/script.js"></script>
 
 </body>

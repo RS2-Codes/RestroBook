@@ -1,97 +1,110 @@
 :root {
     --main-bg-color: #334257;
-    --main-text-color: #EEEEEE;
+    --main-text-color: #eeeeee;
     --main-card-color: #163561;
     --location-card-color-gradient: ;
-    --location-text-card-color: #D8D2CB;
-    --location-link-card-color: #398AB9;
-    --card-color1: #EEEEEE;
-    --card-color2: #D8D2CB;
-    --card-color3: #398AB9;
-    --card-color4: #1C658C;
+    --location-text-card-color: #d8d2cb;
+    --location-link-card-color: #398ab9;
+    --card-color1: #eeeeee;
+    --card-color2: #d8d2cb;
+    --card-color3: #398ab9;
+    --card-color4: #1c658c;
     --card-link-hover: #000;
-    --color0: #EEEEEE;
-    --color1: #548CA8;
+    --color0: #eeeeee;
+    --color1: #548ca8;
     --color2: #476072;
     --color3: #334257;
     --hover-color-1: #0a58ca;
-    --font-famaly1: 'Montserrat', sans-serif
+    --font-famaly1: "Montserrat", sans-serif;
 }
 
 * {
     margin: 0;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 body {
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
-    font-family: var(--font-famaly1)
+    font-family: var(--font-famaly1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    margin-top: auto;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+footer > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
 }
 
 .flex-box {
     display: flex;
     justify-content: center;
-    align-content: center
+    align-content: center;
 }
 
 .align-items {
-    align-items: center
+    align-items: center;
 }
 
 a {
     color: var(--main-text-color);
-    text-decoration: none
+    text-decoration: none;
 }
 
-.card>img {
+.card > img {
     max-width: 350px;
-    width: 100%
+    width: 100%;
 }
 
 .cpadding {
-    padding-right: 8px
+    padding-right: 8px;
 }
-
 
 /* Navigation */
 
 .nav-link {
-    color: var(--main-text-color)
+    color: var(--main-text-color);
 }
 
 .navbar-brand img {
     width: 70px;
-    height: auto
+    height: auto;
 }
 
-.logged-user.dropdown>a:focus-within {
-    color: var(--hover-color-1)
+.logged-user.dropdown > a:focus-within {
+    color: var(--hover-color-1);
 }
 
 nav .dropdown-menu {
     padding-block: 0;
-    overflow: hidden
+    overflow: hidden;
 }
-
 
 /* main page card start  */
 
 .main {
     max-width: 1200px;
-    margin: 0 auto
+    margin: 0 auto;
 }
 
 .main h1 {
     font-size: 24px;
     font-weight: 400;
-    text-align: center
+    text-align: center;
 }
 
 .main img {
     height: auto;
     max-width: 100%;
-    vertical-align: middle
+    vertical-align: middle;
 }
 
 .card-btn {
@@ -105,11 +118,11 @@ nav .dropdown-menu {
     width: 100%;
     cursor: pointer;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    background: transparent
+    background: transparent;
 }
 
 .card-btn:hover {
-    background-color: rgba(255, 255, 255, 0.12)
+    background-color: rgba(255, 255, 255, 0.12);
 }
 
 .cards {
@@ -119,23 +132,23 @@ nav .dropdown-menu {
     margin: 0;
     padding: 0;
     justify-content: center;
-    padding-top: 4rem
+    padding-top: 4rem;
 }
 
 .cards_item {
     display: flex;
-    padding: 1rem
+    padding: 1rem;
 }
 
 @media (min-width: 40rem) {
     .cards_item {
-        width: 50%
+        width: 50%;
     }
 }
 
 @media (min-width: 56rem) {
     .cards_item {
-        width: 33.3333%
+        width: 33.3333%;
     }
 }
 
@@ -145,12 +158,12 @@ nav .dropdown-menu {
     box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .card_content {
     padding: 1rem;
-    background: linear-gradient(to bottom left, #1b3e6e 40%, #163561 100%)
+    background: linear-gradient(to bottom left, #1b3e6e 40%, #163561 100%);
 }
 
 .card_title {
@@ -159,7 +172,7 @@ nav .dropdown-menu {
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: capitalize;
-    margin: 0px
+    margin: 0px;
 }
 
 .card_text {
@@ -167,21 +180,19 @@ nav .dropdown-menu {
     font-size: 0.875rem;
     line-height: 1.5;
     margin-bottom: 1.25rem;
-    font-weight: 400
+    font-weight: 400;
 }
 
 .card_image {
     color: red;
-    filter: brightness(150%)
+    filter: brightness(150%);
 }
 
 .card-img-height {
     height: 245px;
 }
 
-
 /* main page card start  */
-
 
 /* booking page start */
 
@@ -199,32 +210,32 @@ nav .dropdown-menu {
     justify-content: space-between !important;
     max-width: 1200px;
     height: 353px;
-    gap: 1rem
+    gap: 1rem;
 }
 
 .image-sec {
     width: 750px;
-    margin-left: 25px
+    margin-left: 25px;
 }
 
 .col-md-6 {
-    margin-top: 5px
+    margin-top: 5px;
 }
 
 .form-group input {
     width: 300px;
     margin-top: 5px;
-    margin-bottom: 5px
+    margin-bottom: 5px;
 }
 
 .selectt {
     width: 300px;
     margin-top: 5px;
-    margin-bottom: 5px
+    margin-bottom: 5px;
 }
 
 .selectt:disabled {
-    background-color: #777
+    background-color: #777;
 }
 
 .select-arrow {
@@ -232,42 +243,39 @@ nav .dropdown-menu {
 }
 
 .form-btn {
-    margin-top: 20px
+    margin-top: 20px;
 }
 
 .form-btn button {
     padding: 5px;
     border: none;
     border-radius: 5px;
-    width: 150px
+    width: 150px;
 }
 
 #submit-btn:disabled {
-    color: #aaa
+    color: #aaa;
 }
-
 
 /* booked section start  */
 
-
 /* booked section end  */
-
 
 /* Login */
 
 .login-trigger {
     font-weight: bold;
     color: #fff;
-    background: linear-gradient(to bottom right, #B05574, #F87E7B);
+    background: linear-gradient(to bottom right, #b05574, #f87e7b);
     padding: 15px 30px;
     border-radius: 30px;
     position: relative;
     text-decoration: none;
-    transition: all 0.3s ease-in-out
+    transition: all 0.3s ease-in-out;
 }
 
 .login-trigger:hover {
-    color: #333
+    color: #333;
 }
 
 #login-signup-form {
@@ -280,7 +288,7 @@ nav .dropdown-menu {
     display: none;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.7)
+    background: rgba(0, 0, 0, 0.7);
 }
 
 #login-signup-close {
@@ -288,28 +296,28 @@ nav .dropdown-menu {
     width: 100%;
     height: 100%;
     top: 0;
-    left: 0
+    left: 0;
 }
 
 .login-signup-form {
     position: relative;
-    width: 325px
+    width: 325px;
 }
 
 .svg-icon {
     width: 30px;
     height: 30px;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .svg-icon:hover {
-    transform: scale(1.05)
+    transform: scale(1.05);
 }
 
 .svg-icon path,
 .svg-icon polygon,
 .svg-icon rect {
-    fill: #ffffff
+    fill: #ffffff;
 }
 
 .login,
@@ -319,7 +327,7 @@ nav .dropdown-menu {
     grid-gap: 15px;
     padding: 35px;
     border-radius: 12px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.06)
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.06);
 }
 
 .login__icon,
@@ -535,7 +543,6 @@ nav .dropdown-menu {
     transition: 100ms cubic-bezier(0.15, 0.65, 0.65, 1.25);
 }
 
-
 /* select location card  */
 
 .blur {
@@ -587,28 +594,35 @@ nav .dropdown-menu {
 }
 
 .card-link {
-    color: var(--main-text-color)
+    color: var(--main-text-color);
 }
 
-.custom-foot-css {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-}
+/* Booked Table */
 
 table {
     margin-inline: auto;
     padding: 2rem;
     text-align: center;
+    border-collapse: collapse;
 }
 
-table>* {
+table > * {
     border: 1px solid #ccc;
 }
 
 table thead th,
 table tbody td {
-    padding: 1rem 2rem;
+    padding: 1rem;
+}
+
+tbody tr {
+    border: 1px solid #99999973;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+tbody tr:last-child {
+    border-bottom: 1px solid #ccc;
 }
 
 table tbody td form input[type="submit"] {
@@ -616,9 +630,25 @@ table tbody td form input[type="submit"] {
     border: 0;
     background-color: transparent;
     color: inherit;
-    transition: all 0.3s ease-in-out
+    transition: all 0.3s ease-in-out;
 }
 
 table tbody td form input[type="submit"]:hover {
-    color: var(--hover-color-1)
+    color: var(--hover-color-1);
+}
+
+@media screen and (max-width: 1200px) {
+    .table_container {
+        overflow-y: hidden;
+        margin-bottom: 2rem;
+    }
+
+    table {
+        overflow-x: visible;
+    }
+
+    table thead th,
+    table tbody td {
+        padding: 0.5rem 1rem;
+    }
 }
