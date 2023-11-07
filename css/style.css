@@ -132,7 +132,13 @@ nav .dropdown-menu {
     margin: 0;
     padding: 0;
     justify-content: center;
-    padding-top: 4rem;
+    padding-top: 2rem;
+}
+
+@media screen and (max-width: 650px) {
+    .cards {
+        padding-top: 1rem;
+    }
 }
 
 .cards_item {
@@ -186,6 +192,7 @@ nav .dropdown-menu {
 .card_image {
     color: red;
     filter: brightness(150%);
+    max-width: 500px;
 }
 
 .card-img-height {
@@ -205,33 +212,41 @@ nav .dropdown-menu {
     margin-left: auto;
     margin-right: auto;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between !important;
-    max-width: 1200px;
-    height: 353px;
     gap: 1rem;
+    margin-block: 0.5rem 2rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .booking {
+        flex-wrap: wrap;
+    }
 }
 
 .image-sec {
-    width: 750px;
-    margin-left: 25px;
+    max-width: 750px;
 }
 
 .col-md-6 {
     margin-top: 5px;
 }
 
+.form-sec > form {
+    flex-basis: 100%;
+}
+
+.form-sec > form {
+    padding: 2rem;
+}
+
 .form-group input {
-    width: 300px;
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
 .selectt {
-    width: 300px;
     margin-top: 5px;
-    margin-bottom: 5px;
 }
 
 .selectt:disabled {
